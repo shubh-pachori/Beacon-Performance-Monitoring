@@ -67,7 +67,7 @@ graph TD
     %% Flow lines
     Client -->|1. HTTP POST Traces/Logs| Gateway
     Gateway --> RateLimiter
-    RateLimiter -->|2. Allow / Deny (429)| ChannelBuffer
+    RateLimiter -->|"2. Allow / Deny (429)"| ChannelBuffer
     ChannelBuffer -->|3. Rapid HTTP 202 Accepted| Client
     ChannelBuffer -.->|4. Dequeue Asynchronously| WorkerService
     WorkerService -->|5. Write Batch| SQSQueue
